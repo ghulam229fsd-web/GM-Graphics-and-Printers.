@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description"
+        content="GM Graphics & Printers — professional printing and graphic services in Faisalabad.">
+    <title>Product Details | GM Graphics & Printers</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container nav"><a class="brand" href="index.html">GM Graphics <span>& Printers</span></a><button
+                class="menu" aria-label="Open navigation">☰</button>
+            <nav class="navlinks"><a href="index.html">Home</a><a href="about.html">About</a><a
+                    href="services.html">Services</a><a href="products.html">Products</a><a
+                    href="custom-order.html">Online Order</a><a href="contact.html">Contact</a><a
+                    href="cart.html">Cart</a><a href="login.html">Login</a></nav>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class="container">
+                <div id="detail" class="panel">Loading product...</div>
+            </div>
+        </section>
+    </main>
+    <script>
+        (async () => {const id = new URLSearchParams(location.search).get("id"); const el = document.querySelector("#detail"); try {const {product: p} = await api("/products/" + id); el.innerHTML = `<div class="grid"><img style="border-radius:12px" src="${p.image || 'https://placehold.co/700x500'}"><div><h1>${p.name}</h1><p>${p.description || ""}</p><h2 class="price">${money(p.discountPrice ?? p.price)}</h2><button class="btn" id="add">Add to Cart</button> <a class="btn outline" href="#" id="ask">Ask on WhatsApp</a></div></div>`; document.querySelector("#add").onclick = () => addToCart(id); document.querySelector("#ask").href = waLink("Please share details about " + p.name);} catch (e) {el.textContent = e.message;} })();
+    </script>
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <h3>GM Graphics & Printers</h3>
+                <p>Printing, graphics design, packaging and custom print solutions with quality you can trust.</p>
+            </div>
+            <div>
+                <h4>Explore</h4><a href="services.html">Services</a><a href="products.html">Products</a><a
+                    href="custom-order.html">Custom Order</a>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <p>Faisalabad, Pakistan</p><a href="#"
+                    data-wa="Hello GM Graphics & Printers, I need information.">WhatsApp us</a>
+            </div>
+        </div>
+    </footer><a class="wa" data-wa="Assalam-o-Alaikum, I need printing services." href="#">WhatsApp</a>
+    <script src="js/config.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/products.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description"
+        content="GM Graphics & Printers — professional printing and graphic services in Faisalabad.">
+    <title>Admin Dashboard | GM Graphics & Printers</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container nav"><a class="brand" href="index.html">GM Graphics <span>& Printers</span></a><button
+                class="menu" aria-label="Open navigation">☰</button>
+            <nav class="navlinks"><a href="index.html">Home</a><a href="about.html">About</a><a
+                    href="services.html">Services</a><a href="products.html">Products</a><a
+                    href="custom-order.html">Online Order</a><a href="contact.html">Contact</a><a
+                    href="cart.html">Cart</a><a href="login.html">Login</a></nav>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class="container">
+                <div class="section-head">
+                    <div class="eyebrow">Restricted Access</div>
+                    <h2>Admin Dashboard</h2>
+                    <p>Sign in to manage products and customer orders.</p>
+                </div>
+                <form id="adminLogin" class="panel" style="max-width:460px;margin:auto" hidden>
+                    <div class="form-group"><label>Admin Email</label><input class="field" name="email" type="email"
+                            required></div>
+                    <div class="form-group"><label>Password</label><input class="field" name="password" type="password"
+                            required></div><button class="btn" style="margin-top:14px">Sign In</button>
+                    <p id="adminMessage"></p>
+                </form>
+                <div id="adminApp" hidden>
+                    <div class="actions"><button id="logout" class="btn outline">Logout</button></div>
+                    <div id="stats" class="stats"></div>
+                    <div class="panel" style="margin-top:24px">
+                        <h2>Add Product</h2>
+                        <form id="productForm" class="form-grid" enctype="multipart/form-data">
+                            <div class="form-group"><label>Product Name</label><input class="field" name="name"
+                                    required></div>
+                            <div class="form-group"><label>Category</label><input class="field" name="category"
+                                    required></div>
+                            <div class="form-group"><label>Price (PKR)</label><input class="field" type="number"
+                                    name="price" min="0" required></div>
+                            <div class="form-group"><label>Discount Price</label><input class="field" type="number"
+                                    name="discountPrice" min="0"></div>
+                            <div class="form-group"><label>Stock</label><input class="field" type="number" name="stock"
+                                    min="0" value="0"></div>
+                            <div class="form-group"><label>Product Image</label><input class="field" type="file"
+                                    name="image" accept="image/png,image/jpeg,image/webp"></div>
+                            <div class="form-group full"><label>Description</label><textarea
+                                    name="description"></textarea></div>
+                            <div class="form-group full"><button class="btn">Save Product</button></div>
+                        </form>
+                    </div>
+                    <div class="panel" style="margin-top:24px">
+                        <h2>Products</h2>
+                        <div class="table-wrap">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Category</th>
+                                        <th>Price</th>
+                                        <th>Stock</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="productsTable"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="panel" style="margin-top:24px">
+                        <h2>Orders</h2>
+                        <div class="table-wrap">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Order</th>
+                                        <th>Customer</th>
+                                        <th>Total</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ordersTable"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <h3>GM Graphics & Printers</h3>
+                <p>Printing, graphics design, packaging and custom print solutions with quality you can trust.</p>
+            </div>
+            <div>
+                <h4>Explore</h4><a href="services.html">Services</a><a href="products.html">Products</a><a
+                    href="custom-order.html">Custom Order</a>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <p>Faisalabad, Pakistan</p><a href="#"
+                    data-wa="Hello GM Graphics & Printers, I need information.">WhatsApp us</a>
+            </div>
+        </div>
+    </footer><a class="wa" data-wa="Assalam-o-Alaikum, I need printing services." href="#">WhatsApp</a>
+    <script src="js/config.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>
