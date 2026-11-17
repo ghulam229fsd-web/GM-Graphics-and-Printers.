@@ -484,3 +484,23 @@ h1 span {
     padding-top: 40px;
   }
 }
+@media (max-width: 650px) {
+  /* ... aapka purana code ... */
+  
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  /* .main-nav ko update karein */
+  .main-nav {
+    display: flex;
+    flex-wrap: wrap; /* Yeh links ko agli line par bhej dega */
+    justify-content: center; /* Links ko center kar dega */
+    gap: 10px; 
+    width: 100%;
+    margin-top: 15px;
+  }
+  
+  /* ... baqi aapka code ... */
+}
